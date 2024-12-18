@@ -14,3 +14,22 @@
 
 ## **2. .env**
 ไฟล์นี้ใช้สำหรับเก็บตัวแปรสภาพแวดล้อม (Environment Variables) ที่ใช้งานใน `docker-compose.yml` เพื่อลดการใส่ค่าคงที่ (Hardcoded) ในไฟล์ Compose โดยเฉพาะตัวแปร `DOCKER_VOLUME_DIRECTORY` ซึ่งระบุโฟลเดอร์สำหรับจัดเก็บข้อมูลในเครื่องภายนอกคอนเทนเนอร์ เพื่อให้สามารถรักษาข้อมูลไว้ได้แม้คอนเทนเนอร์จะหยุดทำงาน
+
+---
+
+## **3. รูปตัวอย่าง**
+Attu login
+![attu-collection](../Milvus-image/attu-login.jpg)
+
+Attu collection
+![attu-collection](../Milvus-image/attu-collection.jpg)
+
+Attu-vector-search
+![attu-collection](../Milvus-image/attu-vector-search.jpg) 
+
+
+Minio-login
+![attu-collection](../Milvus-image/minio-login.jpg) 
+
+Minio-obj-browser
+![attu-collection](../Milvus-image/minio-obj-browser.jpg) 
