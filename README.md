@@ -49,4 +49,28 @@ Learn Database Milvus
 1. **การรับข้อมูลเวกเตอร์**  
 2. **จัดเก็บใน MinIO**  
 3. **สร้างดัชนีใน Milvus**  
-4. **Query และค้นหาข้อมูล**  
+4. **Query และค้นหาข้อมูล**
+
+---
+
+# 4. Installation and Configuration
+
+## 4.1 Installation Using Docker Compose
+
+สำหรับการติดตั้ง **Milvus** อย่างรวดเร็ว สามารถใช้ **Docker Compose** โดยมีบริการหลักที่เกี่ยวข้องดังนี้:
+
+### **ไฟล์ `docker-compose.yml` ประกอบด้วย:**
+
+1. **ETCD**  
+   - ดูแล Metadata ของระบบ  
+
+2. **MinIO**  
+   - จัดเก็บไฟล์ข้อมูลแบบ **Object Storage**  
+
+3. **Milvus Standalone**  
+   - บริหารจัดการและประมวลผลข้อมูลเวกเตอร์  
+
+4. **Attu**  
+   - Web UI สำหรับการจัดการและตรวจสอบข้อมูลใน Milvus  
+
+---
