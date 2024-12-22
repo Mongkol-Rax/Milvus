@@ -43,13 +43,24 @@ def main():
     schema = CollectionSchema(fields=[field1, field2, field3, field4]
                               , description="Example collection for Milvus.")
 
+    # Index configuration
+    index = {
+        "field_name": "embedding",
+        "index_name": "embedding_index",
+        "index_params": {
+            "index_type": "IVF_FLAT",
+            "metric_type": "L2",
+            "params": {"nlist": 128}
+        }
+    }
+
     # Define the milvus as MilvusUtility()
     milvus = MilvusUtility()
 
     # Open connection
     milvus.open()
     # Call function for create collection
-    milvus.create_collection(collection_name, schema)  # ใช้ schema ที่กำหนดไว้
+    milvus.create_collection(collection_name, schema, index)  # ใช้ schema ที่กำหนดไว้
     #Close connetion
     milvus.close()
 

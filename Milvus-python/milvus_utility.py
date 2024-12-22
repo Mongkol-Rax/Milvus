@@ -35,7 +35,7 @@ class MilvusUtility:
             self.connected = False
             print("Disconnected from Milvus")
 
-    def create_collection(self, collection_name, schema):
+    def create_collection(self, collection_name, schema, index):
         """
         สร้าง Collection ใหม่โดยรับ Schema โดยตรง
 
@@ -52,7 +52,19 @@ class MilvusUtility:
             return
 
         try:
-            Collection(name=collection_name, schema=schema)
+            collection = Collection(name=collection_name, schema=schema)
+
+            # สร้าง Index
+            if "field_name" in index and "index_params" in index:
+                collection.create_index(
+                    field_name=index["field_name"],
+                    index_params=index["index_params"],
+                    index_name=index["index_name"]
+                )
+                print(f"Index created successfully on field '{index['field_name']}'!")
+            else:
+                print("Index configuration is missing 'field_name' or 'index_params'.")
+
             print(f"Collection '{collection_name}' created successfully!")
         except Exception as e: # pylint: disable=W0718
             print(f"Error creating collection: {e}")
