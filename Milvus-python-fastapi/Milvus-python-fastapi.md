@@ -67,18 +67,20 @@ Service API โดยใช้ **FastAPI**:
    MILVUS_PORT=19530
 
 3. **Run Server API**
+
+   - Runserver
    ```bash
    uvicorn main:app --reload
-
-   เข้าถึง API Documentation: ที่ 
+   
+   - API Documentation
    ```bash
    http://127.0.0.1:8000/docs
 
 4. **เรียกใช้งาน API**
-   ทดสอบเพิ่มข้อมูลด้วย test_insert.py 
+
+   ทดสอบเพิ่มข้อมูลด้วย test_insert.py , test_search_embed.py
+
    ```bash
    python -m tests.test_insert
 
-   ทดสอบค้นหาด้วย test_search_embed.py
-   ```bash
    python -m tests.test_search_embed
