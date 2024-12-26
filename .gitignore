@@ -1,2 +1,6 @@
 # Ignore .venv folder
 Milvus-python/.venv/
+Milvus-python-fastapi/.venv/
+
+# Ignore all __pycache__ folders
+__pycache__/
